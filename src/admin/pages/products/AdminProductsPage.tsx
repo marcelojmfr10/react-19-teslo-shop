@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+import { PlusIcon } from "lucide-react";
 import { AdminTitle } from "@/admin/components/AdminTitle";
 import { CustomPagination } from "@/components/custom/CustomPagination";
 import { Button } from "@/components/ui/button";
@@ -9,8 +11,6 @@ import {
   TableCell,
   Table,
 } from "@/components/ui/table";
-import { PlusIcon } from "lucide-react";
-import { Link } from "react-router";
 
 export const AdminProductsPage = () => {
   return (

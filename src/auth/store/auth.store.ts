@@ -1,5 +1,5 @@
-import { User } from "@/interfaces/user.interface";
 import { create } from "zustand";
+import { User } from "@/interfaces/user.interface";
 import { loginAction } from "../actions/login.action";
 
 type AuthState = {
