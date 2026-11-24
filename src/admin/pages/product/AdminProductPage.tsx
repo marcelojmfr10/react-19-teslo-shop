@@ -1,10 +1,8 @@
-import { AdminTitle } from "@/admin/components/AdminTitle";
-import { useParams } from "react-router";
-
 import { useState } from "react";
+import { useParams, Link } from "react-router";
 import { X, Plus, Upload, Tag, SaveAll } from "lucide-react";
+import { AdminTitle } from "@/admin/components/AdminTitle";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router";
 
 interface Product {
   id: string;

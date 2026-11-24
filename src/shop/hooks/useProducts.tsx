@@ -1,6 +1,6 @@
+import { useParams, useSearchParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { getProductsAction } from "../actions/get-products.action";
-import { useParams, useSearchParams } from "react-router";
 
 export const useProducts = () => {
   const { gender } = useParams();
