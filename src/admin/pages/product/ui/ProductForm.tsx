@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { X, SaveAll, Tag, Plus, Upload } from "lucide-react";
+import { useForm } from "react-hook-form";
 import { AdminTitle } from "@/admin/components/AdminTitle";
 import { Button } from "@/components/ui/button";
 import { Product } from "@/interfaces/product.interface";
@@ -15,6 +16,9 @@ const availableSizes = ["XS", "S", "M", "L", "XL", "XXL"];
 
 export const ProductForm = ({ title, subTitle, product }: Props) => {
   const [dragActive, setDragActive] = useState(false);
+  const { register } = useForm({
+    defaultValues: product,
+  });
 
   const addTag = () => {
     if (newTag.trim() && !product.tags.includes(newTag.trim())) {
@@ -109,6 +113,7 @@ export const ProductForm = ({ title, subTitle, product }: Props) => {
                     type="text"
                     // value={product.title}
                     // onChange={(e) => handleInputChange("title", e.target.value)}
+                    {...register("title")}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     placeholder="Título del producto"
                   />
@@ -125,6 +130,7 @@ export const ProductForm = ({ title, subTitle, product }: Props) => {
                       //   onChange={(e) =>
                       //     handleInputChange("price", parseFloat(e.target.value))
                       //   }
+                      {...register("price")}
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="Precio del producto"
                     />
@@ -140,6 +146,7 @@ export const ProductForm = ({ title, subTitle, product }: Props) => {
                       //   onChange={(e) =>
                       //     handleInputChange("stock", parseInt(e.target.value))
                       //   }
+                      {...register("stock")}
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="Stock del producto"
                     />
@@ -154,6 +161,7 @@ export const ProductForm = ({ title, subTitle, product }: Props) => {
                     type="text"
                     // value={product.slug}
                     // onChange={(e) => handleInputChange("slug", e.target.value)}
+                    {...register("slug")}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     placeholder="Slug del producto"
                   />
@@ -168,6 +176,7 @@ export const ProductForm = ({ title, subTitle, product }: Props) => {
                     // onChange={(e) =>
                     //   handleInputChange("gender", e.target.value)
                     // }
+                    {...register("gender")}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   >
                     <option value="men">Hombre</option>
@@ -186,6 +195,7 @@ export const ProductForm = ({ title, subTitle, product }: Props) => {
                     // onChange={(e) =>
                     //   handleInputChange("description", e.target.value)
                     // }
+                    {...register("description")}
                     rows={5}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                     placeholder="Descripción del producto"

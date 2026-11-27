@@ -1,24 +1,7 @@
-import { useState } from "react";
-import { useParams, Link, Navigate } from "react-router";
-import { X, Plus, Upload, Tag, SaveAll } from "lucide-react";
-import { AdminTitle } from "@/admin/components/AdminTitle";
-import { Button } from "@/components/ui/button";
+import { useParams, Navigate } from "react-router";
 import { useProduct } from "@/admin/hooks/useProduct";
 import { CustomFullScreenLoading } from "@/components/custom/CustomFullScreenLoading";
 import { ProductForm } from "./ui/ProductForm";
-
-interface Product {
-  id: string;
-  title: string;
-  price: number;
-  description: string;
-  slug: string;
-  stock: number;
-  sizes: string[];
-  gender: string;
-  tags: string[];
-  images: string[];
-}
 
 export const AdminProductPage = () => {
   const { id } = useParams();
